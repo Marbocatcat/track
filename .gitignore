@@ -1,5 +1,5 @@
 /venv
-/mkenv.egg-info
-/mkenv/__pycache__
+/track/__pycache__
+/track/conf.py
 /setup.conf
 /setup.py
