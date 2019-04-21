@@ -31,8 +31,7 @@ class Track:
         api_url = f"http://production.shippingapis.com/ShippingAPI.dll?API=\
         TrackV2&XML=<TrackRequest USERID='{self.user_id}'>\
         <TrackID ID='{self.tracking_number}'></TrackID></TrackRequest>"
-
-        error = Fore.RED + 'Error occured connecting to API. Status code: s`tatus_code'
+        error = Fore.RED + 'Error occured connecting to API. Status code: status_code'
 
         r = session.get(api_url)
         if r.status_code != 200:
@@ -57,5 +56,6 @@ class Track:
 
         print(Fore.WHITE + f"SUMMARY: {self.track_summary()}")
         print('DETAILS:')
+
         for i, items in enumerate(self.track_detail()):
             print(Fore.YELLOW + f"|-- {items[0]}")
